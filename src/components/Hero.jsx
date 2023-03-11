@@ -3,13 +3,19 @@ import {BiMouse} from 'react-icons/bi'
 import {BsGithub,BsStackOverflow} from 'react-icons/bs'
 import {TbBrandCodepen} from 'react-icons/tb';
 import {AiFillInstagram} from 'react-icons/ai'
+import { motion } from "framer-motion"
+import {easeIn} from "framer-motion/dom";
 const Hero = () => {
     return (
+        <>
         <section className='pt-[55px] lg:pt-0' id='home' >
             <div className='container mx-auto relative'>
                 <div className="min-h-screen flex flex-col justify-start md:justify-center items-center flex-wrap">
                     <div className='w-full flex justify-center items-center flex-wrap'>
-                        <div className="w-full lg:w-2/4 px-5 pt-3">
+                        <motion.div initial={{ opacity: 0,y:-200}}
+                                    transition={{ duration: 0.5,delay:0.2,velocity:easeIn }}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                    className="w-full lg:w-2/4 px-5 pt-3">
                             <div className='flex justify-start items-start mx-auto gap-x-[0.1rem] md:gap-x-4'>
                                 <div className='flex flex-col justify-center items-center'>
                                     <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
@@ -22,8 +28,12 @@ const Hero = () => {
                                     <a href='#contact' className='text-white bg-blue-500 px-6 py-2 rounded text-center hover:bg-blue-900'>Hire Me</a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="w-full lg:w-2/4 flex flex-col lg:flex-row justify-center items-center gap-5 p-5">
+                        </motion.div>
+                        <motion.div
+                            initial={{ opacity: 0,y:200}}
+                            transition={{ duration: 0.5,delay:0.2,velocity:easeIn }}
+                            whileInView={{ opacity: 1,y:0  }}
+                            className="w-full lg:w-2/4 flex flex-col lg:flex-row justify-center items-center gap-5 p-5">
                             <div className='flex flex-row items-center lg:flex-col gap-x-5 lg:gap-x-0 lg:gap-y-5'>
                                 <a href="https://github.com/typle445" target='_blank'>
                                     <BsGithub className='text-3xl'/>
@@ -41,19 +51,20 @@ const Hero = () => {
                             <div>
                                 <img src={Heropic} className='block mx-auto h-auto lg:h-96 rounded-xl' alt=""/>
                             </div>
+                        </motion.div>
+                </div>
+                <div className='h-3 text-center absolute bottom-20'>
+                    <a href="#about" className='text-text animate-bounce hidden lg:block'>
+                        <div className='flex flex-col justify-center items-center gap-y-2'>
+                            <p>Scroll Down</p>
+                            <BiMouse className='text-3xl'/>
                         </div>
-                    </div>
-                    <div className='h-3 text-center absolute bottom-20'>
-                        <a href="#about" className='text-text animate-bounce hidden lg:block'>
-                            <div className='flex flex-col justify-center items-center gap-y-2'>
-                                <p>Scroll Down</p>
-                                <BiMouse className='text-3xl'/>
-                            </div>
-                        </a>
-                    </div>
+                    </a>
                 </div>
             </div>
+        </div>
         </section>
+        </>
     )
 }
 export default Hero

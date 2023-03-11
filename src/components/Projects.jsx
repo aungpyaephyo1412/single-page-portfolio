@@ -7,14 +7,21 @@ import facebook from '../img/Screenshot (117)_edited.jpg'
 import flyo from '../img/Screenshot (119)_edited.jpg'
 import foodieMenu from '../img/Screenshot (120)_edited.jpg'
 import Onlineshop from '../img/Screenshot (121)_edited.jpg'
+import {motion} from "framer-motion";
+import {easeIn} from "framer-motion/dom";
+
 const Projects = () => {
     return (
-        <section id='projects' className='min-h-screen pt-[55px]'>
+        <>
+            <section id='projects' className='min-h-screen pt-[55px]'>
             <div className='container mx-auto flex flex-wrap gap-y-4 '>
                 <div className='text-center w-full pb-5'>
                     <h1 className='text-text text-3xl font-bold uppercase'>My projects</h1>
                 </div>
-                <div className=" w-full md:w-2/4 px-4">
+                <motion.div initial={{ opacity: 0,y:200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                    className=" w-full md:w-2/4 px-4">
                     <div className="bg-info border border-black p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <img className="rounded-lg w-full h-[290px]" src={sushi} alt="" />
                         <div className="p-5">
@@ -44,8 +51,11 @@ const Projects = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div className=" w-full md:w-2/4 px-4">
+                </motion.div>
+                <motion.div initial={{ opacity: 0,y:200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                    className=" w-full md:w-2/4 px-4">
                     <div className="bg-info border border-black p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <img className="rounded-lg w-full h-[290px]" src={medium} alt="" />
                         <div className="p-5">
@@ -75,8 +85,11 @@ const Projects = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div className=" w-full md:w-2/4 px-4">
+                </motion.div>
+                <motion.div initial={{ opacity: 0,y:200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                    className=" w-full md:w-2/4 px-4">
                     <div className="bg-info border border-black rounded-lg p-5 shadow dark:bg-gray-800 dark:border-gray-700">
                         <img className="rounded-lg w-full h-[290px]" src={flyo} alt="" />
                         <div className="p-5">
@@ -105,8 +118,11 @@ const Projects = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div className="w-full md:w-2/4 px-4 ">
+                </motion.div>
+                <motion.div initial={{ opacity: 0,y:200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                    className="w-full md:w-2/4 px-4 ">
                     <div className="bg-info border border-black p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <img className="rounded-lg w-full h-[290px]" src={foodie} alt="" />
                         <div className="p-5">
@@ -135,8 +151,11 @@ const Projects = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div className="w-full md:w-2/4 px-4 ">
+                </motion.div>
+                <motion.div initial={{ opacity: 0,y:200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                    className="w-full md:w-2/4 px-4 ">
                     <div className="bg-info border border-black p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <img className="rounded-lg w-full h-[290px]" src={facebook} alt="" />
                         <div className="p-5">
@@ -165,8 +184,11 @@ const Projects = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div className="w-full md:w-2/4 px-4 ">
+                </motion.div>
+                <motion.div initial={{ opacity: 0,y:200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                    className="w-full md:w-2/4 px-4 ">
                     <div className="bg-info border border-black p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <img className="rounded-lg w-full h-[290px]" src={foodieMenu} alt="" />
                         <div className="p-5">
@@ -198,8 +220,11 @@ const Projects = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
-                <div className="w-full md:w-2/4 px-4 ">
+                </motion.div>
+                <motion.div initial={{ opacity: 0,y:200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                    className="w-full md:w-2/4 px-4 ">
                     <div className="bg-info border border-black p-5 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <img className="rounded-lg w-full h-[290px]" src={Onlineshop} alt="" />
                         <div className="p-5">
@@ -231,9 +256,10 @@ const Projects = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
+        </>
     )
 }
 export default Projects

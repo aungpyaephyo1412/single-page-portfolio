@@ -2,6 +2,9 @@ import Touch from '../img/icon/Get in touch-bro.svg'
 import {useState} from "react";
 import {AiFillPhone,AiTwotoneMail} from 'react-icons/ai';
 import {MdLocationPin} from 'react-icons/md'
+import {motion} from "framer-motion";
+import {easeIn} from "framer-motion/dom";
+
 const Contact = () => {
     const [name,setName] = useState('')
     const [email,setEmail] = useState('')
@@ -17,7 +20,8 @@ const Contact = () => {
         console.log(data)
     }
     return (
-        <section id='contact' className={`pt-[55px]`}>
+        <>
+            <section id='contact' className={`pt-[55px]`}>
             <div className='container mx-auto min-h-screen flex justify-center items-center'>
                 <div className='w-full flex justify-center items-center flex-wrap'>
                     <div className='text-center w-full pb-5'>
@@ -25,18 +29,30 @@ const Contact = () => {
                     </div>
                     <div className="w-full mb-5 pb-5">
                         <div className='flex justify-evenly items-center p-5 flex-wrap gap-4'>
-                            <div className='w-full md:w-2/4 md:mx-auto lg:w-[20%] flex flex-col justify-center items-center bg-card py-5 gap-y-4 rounded-xl'>
+                            <motion.div
+                                initial={{ opacity: 0,y:-200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                className='w-full md:w-2/4 md:mx-auto lg:w-[20%] flex flex-col justify-center items-center bg-card py-5 gap-y-4 rounded-xl'>
                                 <AiFillPhone className='text-4xl mb-3'/>
                                 <a href="tel:09776706992">09776706992</a>
-                            </div>
-                            <div className='w-full md:w-2/4 md:mx-auto lg:w-[40%] flex flex-col justify-center items-center bg-card py-5 gap-y-4 rounded-xl'>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0,y:-200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                className='w-full md:w-2/4 md:mx-auto lg:w-[40%] flex flex-col justify-center items-center bg-card py-5 gap-y-4 rounded-xl'>
                                 <AiTwotoneMail className='text-4xl mb-3'/>
                                 <a href="mailto:aungpyaephyo1145@gmail.com">aungpyaephyo1145@gmail.com</a>
-                            </div>
-                            <div className='w-full md:w-2/4 md:mx-auto lg:w-[30%] flex flex-col justify-center items-center bg-card py-5 gap-y-4 rounded-xl'>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0,y:-200}}
+                                    transition={{ duration: 0.5 ,delay:0.2,velocity:easeIn}}
+                                    whileInView={{ opacity: 1,y:0  }}
+                                className='w-full md:w-2/4 md:mx-auto lg:w-[30%] flex flex-col justify-center items-center bg-card py-5 gap-y-4 rounded-xl'>
                                 <MdLocationPin className='text-4xl mb-3'/>
                                 <a href="https://goo.gl/maps/1wKXW9j3bTp5sifh6" target='_blank'>Mandalay,Kyaukse,Kyaukse</a>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                     <div className='w-full flex justify-between items-center flex-wrap p-5 lg:p-0'>
@@ -90,6 +106,7 @@ const Contact = () => {
                 </div>
             </div>
         </section>
+        </>
     )
 }
 export default Contact
