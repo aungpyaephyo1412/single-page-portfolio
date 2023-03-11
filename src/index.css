@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-url{
+    background: #8BBCCC;
+     /*background-image: url(./img/bg.png);*/
+     /*background-size: 100% 100%;*/
+     /*background-repeat: no-repeat;*/
+     /*background-origin: border-box;*/
+     /*background-position: top;*/
+     /*background-attachment: fixed;*/
+ }
+/*.ig{*/
+/*    background: #d6249f;*/
+/*    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);*/
+/*}*/
+.violet-gradient {
+    background: #804dee;
+    background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+    background: -webkit-linear-gradient(
+            -90deg,
+            #804dee 0%,
+            rgba(60, 51, 80, 0) 100%
+    );
+}
+.obj-po{
+    object-position: top;
+}
